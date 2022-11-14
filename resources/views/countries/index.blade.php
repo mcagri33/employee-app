@@ -68,12 +68,9 @@
                     <div class="d-flex justify-content-center">
                         {!! $countries->links() !!}
                     </div>
-
                 </div>
             </div>
         </div>
-
-
     </main>
 
 @endsection
