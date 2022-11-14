@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\StateController;
+use App\Http\Controllers\Backend\CityController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,4 +73,18 @@ Route::group(['prefix' => 'castle/state','middleware'=>'auth'], function (){
         ->name('castle.state.delete');
 });
 
+Route::group(['prefix' => 'castle/city','middleware'=>'auth'], function (){
+    Route::get('/',[CityController::class,'index'])
+        ->name('castle.city.index');
+    Route::get('/add',[CityController::class,'create'])
+        ->name('castle.city.add');
+    Route::post('/add',[CityController::class,'store'])
+        ->name('castle.city.store');
+    Route::get('/{id}',[CityController::class,'edit'])
+        ->name('castle.city.edit');
+    Route::post('/update',[CityController::class,'update'])
+        ->name('castle.city.update');
+    Route::get('/delete/{id}',[CityController::class,'destroy'])
+        ->name('castle.city.delete');
+});
 require __DIR__.'/auth.php';

@@ -29,7 +29,7 @@
                 </li>
                 <li> <a href="{{route('castle.state.index')}}"><i class="bi bi-circle"></i>State</a>
                 </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>City</a>
+                <li> <a href="{{route('castle.city.index')}}"><i class="bi bi-circle"></i>City</a>
                 </li>
                 <li> <a href="#"><i class="bi bi-circle"></i>Department</a>
                 </li>
