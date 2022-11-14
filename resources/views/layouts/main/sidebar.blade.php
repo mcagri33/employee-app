@@ -25,7 +25,7 @@
                 <div class="menu-title">System Management</div>
             </a>
             <ul>
-                <li> <a href="#"><i class="bi bi-circle"></i>Country</a>
+                <li> <a href="{{route('castle.country.index')}}"><i class="bi bi-circle"></i>Country</a>
                 </li>
                 <li> <a href="#"><i class="bi bi-circle"></i>State</a>
                 </li>
