@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\StateController;
 use App\Http\Controllers\Backend\CityController;
+use App\Http\Controllers\Backend\DepartmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +30,7 @@ Route::group(['prefix' => 'castle/users','middleware'=>'auth'], function (){
         ->name('castle.user.index');
     Route::get('/add',[UserController::class,'create'])
         ->name('castle.user.add');
-    Route::post('/add',[UserController::class,'store'])
+    Route::post('/store',[UserController::class,'store'])
         ->name('castle.user.store');
     Route::get('/{id}',[UserController::class,'edit'])
         ->name('castle.user.edit');
@@ -48,7 +49,7 @@ Route::group(['prefix' => 'castle/country','middleware'=>'auth'], function (){
         ->name('castle.country.index');
     Route::get('/add',[CountryController::class,'create'])
         ->name('castle.country.add');
-    Route::post('/add',[CountryController::class,'store'])
+    Route::post('/store',[CountryController::class,'store'])
         ->name('castle.country.store');
     Route::get('/{id}',[CountryController::class,'edit'])
         ->name('castle.country.edit');
@@ -63,7 +64,7 @@ Route::group(['prefix' => 'castle/state','middleware'=>'auth'], function (){
         ->name('castle.state.index');
     Route::get('/add',[StateController::class,'create'])
         ->name('castle.state.add');
-    Route::post('/add',[StateController::class,'store'])
+    Route::post('/store',[StateController::class,'store'])
         ->name('castle.state.store');
     Route::get('/{id}',[StateController::class,'edit'])
         ->name('castle.state.edit');
@@ -78,7 +79,7 @@ Route::group(['prefix' => 'castle/city','middleware'=>'auth'], function (){
         ->name('castle.city.index');
     Route::get('/add',[CityController::class,'create'])
         ->name('castle.city.add');
-    Route::post('/add',[CityController::class,'store'])
+    Route::post('/store',[CityController::class,'store'])
         ->name('castle.city.store');
     Route::get('/{id}',[CityController::class,'edit'])
         ->name('castle.city.edit');
@@ -86,5 +87,20 @@ Route::group(['prefix' => 'castle/city','middleware'=>'auth'], function (){
         ->name('castle.city.update');
     Route::get('/delete/{id}',[CityController::class,'destroy'])
         ->name('castle.city.delete');
+});
+
+Route::group(['prefix' => 'castle/department','middleware'=>'auth'], function (){
+    Route::get('/',[DepartmentController::class,'index'])
+        ->name('castle.department.index');
+    Route::get('/add',[DepartmentController::class,'create'])
+        ->name('castle.department.add');
+    Route::post('/store',[DepartmentController::class,'store'])
+        ->name('castle.department.store');
+    Route::get('/{id}',[DepartmentController::class,'edit'])
+        ->name('castle.department.edit');
+    Route::post('/update',[DepartmentController::class,'update'])
+        ->name('castle.department.update');
+    Route::get('/delete/{id}',[DepartmentController::class,'destroy'])
+        ->name('castle.department.delete');
 });
 require __DIR__.'/auth.php';
