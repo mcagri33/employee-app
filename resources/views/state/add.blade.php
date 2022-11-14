@@ -37,7 +37,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <label class="form-label">Dil</label>
+                                    <label class="form-label">Country Name</label>
                                     <select class="form-select mb-3" name="country_id" aria-label="Default select example">
                                         @foreach($countries as $country )
                                             <option value="{{$country->id}}">{{$country->name}}</option>
