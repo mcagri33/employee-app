@@ -27,9 +27,10 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <h5 class="mb-0">@yield('title')</h5>
-                    <form class="ms-auto position-relative">
-                        <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
-                        <input class="form-control ps-5" type="text" placeholder="search">
+                    <form class="ms-auto position-relative" action="{{route('castle.user.index')}}" method="GET">
+                        <input type="search" name="search" class="form-control">
+                        <div style="margin-left: 58%;padding: 10px;">
+                        <button type="submit" class="btn btn-primary mb-2">Search</button></div>
                     </form>
                 </div>
                 <div class="table-responsive mt-3">
@@ -67,9 +68,9 @@
                             No found Data
                         @endif
                     </table>
-                    <div class="d-flex justify-content-center">
+                   {{-- <div class="d-flex justify-content-center">
                         {!! $users->links() !!}
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>

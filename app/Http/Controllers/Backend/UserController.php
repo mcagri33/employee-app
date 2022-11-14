@@ -8,7 +8,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
-use Illuminate\Validation\Rules;
 class UserController extends Controller
 {
     /**
@@ -16,9 +15,13 @@ class UserController extends Controller
      *
      * @return View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(10);
+
+        $users = User::all();
+        if($request->has('search')){
+            $users = User::where('username','like',"%{$request->search}%")->orWhere('email','like',"%{$request->search}%")->get();
+        }
         return view('users.index',compact('users'));
     }
 
