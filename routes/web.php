@@ -34,8 +34,10 @@ Route::group(['prefix' => 'castle/users','middleware'=>'auth'], function (){
         ->name('castle.user.update');
     Route::get('/delete/{id}',[UserController::class,'destroy'])
         ->name('castle.user.delete');
-    Route::post('/{id}/password',[UserController::class,'store'])
+    Route::get('/{id}/password',[UserController::class,'password'])
         ->name('castle.user.password');
+    Route::post('/passwordChange',[UserController::class,'passwordChange'])
+        ->name('castle.user.passwordChange');
 });
 
 require __DIR__.'/auth.php';
