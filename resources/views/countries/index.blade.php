@@ -45,9 +45,11 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $count = 1; ?>
                             @foreach($countries as $country)
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$countries ->perPage()*($countries->currentPage()-1)+$count}}</td>
+                                    <?php $count++; ?>
                                     <td>{{$country->country_code}}</td>
                                     <td>{{$country->name}}</td>
                                     <td>
