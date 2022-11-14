@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\CountryController;
+use App\Http\Controllers\Backend\StateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +55,21 @@ Route::group(['prefix' => 'castle/country','middleware'=>'auth'], function (){
         ->name('castle.country.update');
     Route::get('/delete/{id}',[CountryController::class,'destroy'])
         ->name('castle.country.delete');
+});
+
+Route::group(['prefix' => 'castle/state','middleware'=>'auth'], function (){
+    Route::get('/',[StateController::class,'index'])
+        ->name('castle.state.index');
+    Route::get('/add',[StateController::class,'create'])
+        ->name('castle.state.add');
+    Route::post('/add',[StateController::class,'store'])
+        ->name('castle.state.store');
+    Route::get('/{id}',[StateController::class,'edit'])
+        ->name('castle.state.edit');
+    Route::post('/update',[StateController::class,'update'])
+        ->name('castle.state.update');
+    Route::get('/delete/{id}',[StateController::class,'destroy'])
+        ->name('castle.state.delete');
 });
 
 require __DIR__.'/auth.php';

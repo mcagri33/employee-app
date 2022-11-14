@@ -27,7 +27,7 @@
             <ul>
                 <li> <a href="{{route('castle.country.index')}}"><i class="bi bi-circle"></i>Country</a>
                 </li>
-                <li> <a href="#"><i class="bi bi-circle"></i>State</a>
+                <li> <a href="{{route('castle.state.index')}}"><i class="bi bi-circle"></i>State</a>
                 </li>
                 <li> <a href="#"><i class="bi bi-circle"></i>City</a>
                 </li>
