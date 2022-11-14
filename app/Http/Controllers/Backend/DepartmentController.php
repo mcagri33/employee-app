@@ -68,7 +68,7 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $request->validate([
             'name' => 'required',

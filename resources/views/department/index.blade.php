@@ -39,7 +39,6 @@
                             <thead class="table-secondary">
                             <tr>
                                 <th>#</th>
-                                <th>Code</th>
                                 <th>Name</th>
                                 <th>Actions</th>
                             </tr>
