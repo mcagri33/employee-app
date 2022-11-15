@@ -50,11 +50,13 @@
                                 <tr>
                                     <td>{{$states ->perPage()*($states->currentPage()-1)+$count}}</td>
                                     <?php $count++; ?>
-                                    <td>@if($state->country_id)
+                                    <td>
+                                        @if($state->country_id)
                                             {{$state->country->name}}
                                         @else
                                             -
-                                        @endif</td>
+                                        @endif
+                                    </td>
                                     <td>{{$state->name}}</td>
                                     <td>
                                         <div class="table-actions d-flex align-items-center gap-3 fs-6">
