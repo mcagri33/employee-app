@@ -18,7 +18,10 @@
     <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
+    <link href="{{asset('assets/plugins/datetimepicker/css/classic.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/datetimepicker/css/classic.time.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/datetimepicker/css/classic.date.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css')}}">
 
     <!-- loader-->
     <link href="{{asset('assets/css/pace.min.css')}}" rel="stylesheet" />
@@ -83,7 +86,13 @@
     new PerfectScrollbar(".review-list")
     new PerfectScrollbar(".chat-talk")
 </script>
-
+<script src="{{asset('assets/plugins/datetimepicker/js/legacy.js')}}"></script>
+<script src="{{asset('assets/plugins/datetimepicker/js/picker.js')}}"></script>
+<script src="{{asset('assets/plugins/datetimepicker/js/picker.time.js')}}"></script>
+<script src="{{asset('assets/plugins/datetimepicker/js/picker.date.js')}}"></script>
+<script src="{{asset('assets/plugins/bootstrap-material-datetimepicker/js/moment.min.js')}}"></script>
+<script src="{{asset('assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js')}}"></script>
+<script src="{{asset('assets/js/form-date-time-pickes.js')}}"></script>
 
 </body>
 
