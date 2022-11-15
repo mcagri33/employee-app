@@ -24,8 +24,8 @@ return new class extends Migration
             $table->foreignId('state_id')->constrained();
             $table->foreignId('city_id')->constrained();
             $table->char('zip_code');
-            $table->date('birthdate')->nullable();
-            $table->date('date_hired')->nullable();
+            $table->string('birthdate')->nullable();
+            $table->string('date_hired')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
