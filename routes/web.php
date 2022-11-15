@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\CountryController;
 use App\Http\Controllers\Backend\StateController;
 use App\Http\Controllers\Backend\CityController;
 use App\Http\Controllers\Backend\DepartmentController;
+use App\Http\Controllers\Backend\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,5 +103,22 @@ Route::group(['prefix' => 'castle/department','middleware'=>'auth'], function ()
         ->name('castle.department.update');
     Route::get('/delete/{id}',[DepartmentController::class,'destroy'])
         ->name('castle.department.delete');
+});
+
+Route::group(['prefix' => 'castle/employee','middleware'=>'auth'], function (){
+    Route::get('/',[EmployeeController::class,'index'])
+        ->name('castle.employee.index');
+    Route::get('/add',[EmployeeController::class,'create'])
+        ->name('castle.employee.add');
+    Route::post('/store',[EmployeeController::class,'store'])
+        ->name('castle.employee.store');
+    Route::get('/{id}',[EmployeeController::class,'edit'])
+        ->name('castle.employee.edit');
+    Route::post('/update',[EmployeeController::class,'update'])
+        ->name('castle.employee.update');
+    Route::get('/delete/{id}',[EmployeeController::class,'destroy'])
+        ->name('castle.employee.delete');
+    Route::post('fetch-states', [EmployeeController::class, 'fetchState']);
+    Route::post('fetch-cities', [EmployeeController::class, 'fetchCity']);
 });
 require __DIR__.'/auth.php';

@@ -19,6 +19,11 @@
 
         <li class="menu-label">Employee Management</li>
         <li>
+            <a href="{{route('castle.employee.index')}}">
+                <div class="menu-label">Employee Management</div>
+            </a>
+        </li>
+        <li>
             <a class="has-arrow" href="javascript:;">
                 <div class="parent-icon"><i class="bi bi-award-fill"></i>
                 </div>
